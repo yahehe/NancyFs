@@ -20,6 +20,7 @@ type Response<'a> =
   | NotFound
   | PermanentRedirect of string
   | Json of 'a
+  | OK
 
 type HTTPMethod = 
   | DELETE
@@ -42,6 +43,7 @@ type NancyFsModule() =
     | NotFound -> HttpStatusCode.NotFound |> box
     | PermanentRedirect path -> this.Response.AsRedirect(path, RedirectResponse.RedirectType.Permanent) |> box
     | Json o -> this.Response.AsJson o |> box
+    | OK -> HttpStatusCode.OK |> box
   
   member this.CreateRoute httpMethod route f = 
     let f = Func<obj, obj>(fun p -> f p |> this.Nancify)

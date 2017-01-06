@@ -20,3 +20,6 @@ module Redirect =
     match redirect with
     | Some true -> PermanentRedirect "/about"
     | _ -> View(Views.``Home.cshtml``, None)
+
+module HealthCheck =
+  let get() = OK
