@@ -23,3 +23,9 @@ module Redirect =
 
 module HealthCheck =
   let get() = OK
+
+module Replanner =
+  let get (replanRequestId : string option)= 
+    match replanRequestId with
+    | Some id -> Json(ReplanRequests.get id)
+    | None -> NotFound

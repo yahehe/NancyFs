@@ -17,3 +17,6 @@ type Routes() as this =
         |> this.CreateRoute GET "/redirect/{redirect}"
     (fun _ -> HealthCheck.get()) 
         |> this.CreateRoute GET "/HealthCheck"
+
+    (fun p -> p?replanRequestId |> Replanner.get)
+     |> this.CreateRoute GET "/v1/replanrequest/{replanRequestId}"
