@@ -1,6 +1,8 @@
 ﻿[<AutoOpen>]
 module Modules
 
+open Amazon.DynamoDBv2
+
 module Home = 
   let get() = View(Views.``Home.cshtml``, None)
   let post nameModel = View(Views.``Welcome.cshtml``, Some nameModel)
@@ -25,7 +27,7 @@ module HealthCheck =
   let get() = OK
 
 module Replanner =
-  let get (replanRequestId : string option)= 
+  let get replanRequestId amazon = 
     match replanRequestId with
-    | Some id -> Json(ReplanRequests.get id)
     | None -> NotFound
+    | Some id -> Json(ReplanRequests.get id amazon)

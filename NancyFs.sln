@@ -1,7 +1,6 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{1EDD1986-C89C-4987-992B-D3DB85D1BEC3}"
 	ProjectSection(SolutionItems) = preProject
@@ -9,6 +8,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{1EDD19
 	EndProjectSection
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "NancyFs", "src\NancyFs\NancyFs.fsproj", "{B5D510EF-2627-4606-9BC4-0ED8988EEA79}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "NancyFs.UnitTests", "NancyFs.UnitTests\NancyFs.UnitTests.fsproj", "{EFB7BB07-FD25-4993-B179-9D17DB47D200}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B5D510EF-2627-4606-9BC4-0ED8988EEA79} = {B5D510EF-2627-4606-9BC4-0ED8988EEA79}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +24,10 @@ Global
 		{B5D510EF-2627-4606-9BC4-0ED8988EEA79}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5D510EF-2627-4606-9BC4-0ED8988EEA79}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5D510EF-2627-4606-9BC4-0ED8988EEA79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFB7BB07-FD25-4993-B179-9D17DB47D200}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFB7BB07-FD25-4993-B179-9D17DB47D200}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFB7BB07-FD25-4993-B179-9D17DB47D200}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFB7BB07-FD25-4993-B179-9D17DB47D200}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

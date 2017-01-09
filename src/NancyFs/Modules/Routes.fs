@@ -1,8 +1,9 @@
 ﻿module Routes
 
 open Nancy.ModelBinding
+open Amazon.DynamoDBv2
 
-type Routes() as this = 
+type Routes(amazon : IAmazonDynamoDB) as this = 
   inherit NancyFsModule()
   do 
     (fun _ -> Home.get()) 
@@ -18,5 +19,5 @@ type Routes() as this =
     (fun _ -> HealthCheck.get()) 
         |> this.CreateRoute GET "/HealthCheck"
 
-    (fun p -> p?replanRequestId |> Replanner.get)
+    (fun p -> Replanner.get p?replanRequestId amazon)
      |> this.CreateRoute GET "/v1/replanrequest/{replanRequestId}"
