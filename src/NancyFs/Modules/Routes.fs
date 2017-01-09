@@ -21,3 +21,6 @@ type Routes(amazon : IAmazonDynamoDB) as this =
 
     (fun p -> Replanner.get p?replanRequestId amazon)
      |> this.CreateRoute GET "/v1/replanrequest/{replanRequestId}"
+
+    (fun p -> this.Bind<ReplanRequestModel>() |> Replanner.post <| amazon)
+     |> this.CreateRoute POST "/v1/replanrequest"

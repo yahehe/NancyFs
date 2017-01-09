@@ -103,11 +103,11 @@
   -->
   <ItemGroup>
     <Compile Include="Bootstrapper.fs" />
+    <Compile Include="Models\Models.fs" />
     <Compile Include="ReplanRequests.fs" />
     <Content Include="Content\Css\Styles.css" />
     <Content Include="Content\Img\Logo.png" />
     <Content Include="Content\Js\Script.js" />
-    <Compile Include="Models\Models.fs" />
     <Compile Include="Modules\Nancy.fs" />
     <Compile Include="Modules\Modules.fs" />
     <Compile Include="Modules\Routes.fs" />

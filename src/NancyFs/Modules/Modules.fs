@@ -31,3 +31,9 @@ module Replanner =
     match replanRequestId with
     | None -> NotFound
     | Some id -> Json(ReplanRequests.get id amazon)
+
+  let post request amazon =
+    let statusCode = ReplanRequests.post request amazon
+    match statusCode with
+    | System.Net.HttpStatusCode.OK -> OK
+    | _ -> Error
